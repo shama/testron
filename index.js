@@ -15,7 +15,7 @@ if (process.versions['electron']) {
     })
   }
 } else {
-  module.exports = function (filename, cb) {
+  module.exports = function (filename) {
     var electronSpawn = require('electron-spawn')
     return electronSpawn('index.js', filename)
   }
