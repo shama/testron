@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - 'iojs'
 before_script:
+  - export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start +extension RANDR;
   - sudo apt-get -qq update
   - sudo apt-get -y install libx11-6:i386;
   - sudo apt-get -y install libglib2.0-0:i386;
