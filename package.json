@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "CI your client side tests with Electron",
   "main": "index.js",
+  "bin": {
+    "testron": "cli.js"
+  },
   "scripts": {
     "test": "node test/test.js"
   },
