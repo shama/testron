@@ -43,6 +43,17 @@ test('test this', function (t) {
 })
 ```
 
+## travis-ci integration
+Add a `.travis.yml` file to your project:
+
+```yml
+language: node_js
+node_js:
+  - 'iojs'
+before_script:
+  - export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start
+```
+
 ## API
 There is also an API:
 
