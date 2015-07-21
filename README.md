@@ -14,14 +14,14 @@ This uses [Electron](https://github.com/atom/electron) to run tests in
 * Install to your project: `npm install testron --save-dev`
 * Install Electron: `npm install electron-prebuilt --save-dev`
 * Add a `test` script to your `package.json`:  
-  ```json
-  {
-    "name": "my-project",
-    "scripts": {
-      "test": "testron test/client.js"
-    },
-  }
-  ```
+    ```json
+    {
+      "name": "my-project",
+      "scripts": {
+        "test": "testron test/client.js"
+      },
+    }
+    ```
 * Run `npm test` to run the test script in Electron
 
 ## Writing tests
