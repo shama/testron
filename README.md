@@ -38,7 +38,7 @@ test('test this', function (t) {
   var li = document.createElement('li')
   ul.appendChild(li)
   li.textContent = 'it works'
-  t.equal(ul.outerHTML, '<ul><li>it works</li></ul>', 'client-test should have worked')
+  t.equal(ul.outerHTML, '<ul><li>it works</li></ul>')
   t.end()
 })
 ```
