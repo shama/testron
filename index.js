@@ -17,9 +17,6 @@ if (process.versions['electron']) {
 } else {
   module.exports = function (filename, cb) {
     var electronSpawn = require('electron-spawn')
-    var electron = electronSpawn('index.js', filename, {
-      stdio: 'inherit'
-    })
-    return electron
+    return electronSpawn('index.js', filename)
   }
 }
