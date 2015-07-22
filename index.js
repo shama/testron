@@ -3,7 +3,7 @@ if (process.versions['electron']) {
     var filename = args[1] || 'test.js'
     var old = process.stdout.write
     process.stdout.write = function (msg) {
-      if (msg.toString().slice(0, 4) === '# ok') {
+      if (msg.toString().slice(0, 4) === '# ok' || msg.toString().slice(0, 6) === '# fail') {
         process.nextTick(function () {
           require('remote').require('app').quit()
         })
