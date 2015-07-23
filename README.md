@@ -28,8 +28,6 @@ This uses [Electron](https://github.com/atom/electron) to run tests in
 Currently this only supports TAP. Here is an example test written using [tape](https://www.npmjs.com/package/tape):
 
 ```js
-// Let tape know we are running in a browser
-process.browser = true
 var test = require('tape')
 
 test('test this', function (t) {
@@ -42,6 +40,20 @@ test('test this', function (t) {
   t.end()
 })
 ```
+
+Then it is recommended bundling your tests and then running with `testron`:
+
+```json
+{
+  "name": "my-project",
+  "scripts": {
+    "test": "browserify test/client.js -o test/bundle.js && testron test/bundle.js"
+  },
+}
+```
+
+> A pull requests that lets us `browserify test/client.js | testron`
+> would be amazing! :D
 
 ## travis-ci integration
 Add a `.travis.yml` file to your project:
