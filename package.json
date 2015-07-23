@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/shama/testron#readme",
   "dependencies": {
-    "electron-spawn": "git://github.com/maxogden/electron-spawn.git#ca8e11b2f02085eee7c024d7f9fb1e1866d2e07e"
+    "electron-spawn": "^3.0.0"
   },
   "devDependencies": {
     "electron-prebuilt": "^0.30.0",
