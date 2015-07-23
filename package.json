@@ -1,6 +1,6 @@
 {
   "name": "testron",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "CI your client side tests with Electron",
   "main": "index.js",
   "bin": {
