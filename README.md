@@ -41,19 +41,16 @@ test('test this', function (t) {
 })
 ```
 
-Then it is recommended bundling your tests and then running with `testron`:
+It is recommended bundling your tests and piping to `testron`:
 
 ```json
 {
   "name": "my-project",
   "scripts": {
-    "test": "browserify test/client.js -o test/bundle.js && testron test/bundle.js"
+    "test": "browserify test/client.js | testron"
   },
 }
 ```
-
-> A pull requests that lets us `browserify test/client.js | testron`
-> would be amazing! :D
 
 ## travis-ci integration
 Add a `.travis.yml` file to your project:

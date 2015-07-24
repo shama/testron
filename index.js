@@ -15,9 +15,35 @@ if (process.versions['electron']) {
     })
   }
 } else {
+  var fs = require('fs')
+  var path = require('path')
+  var through = require('through2')
+  var tempfile = require('tempfile')
+  var electronSpawn = require('electron-spawn')
+
   module.exports = function (filename) {
-    var path = require('path')
-    var electronSpawn = require('electron-spawn')
-    return electronSpawn(path.resolve(__dirname, 'index.js'), filename)
+    if (filename) {
+      return electronSpawn(__filename, filename)
+    } else {
+      return stream()
+    }
+  }
+
+  function stream () {
+    var tmpname = tempfile('.js')
+    var s = {
+      stdin: fs.createWriteStream(tmpname),
+      stdout: through(),
+      stderr: through()
+    }
+    s.stdin.on('close', function () {
+      var electron = electronSpawn(__filename, tmpname)
+      electron.stdout.pipe(s.stdout)
+      electron.stderr.pipe(s.stderr)
+      electron.on('exit', function () {
+        fs.unlink(tmpname)
+      })
+    })
+    return s
   }
 }
