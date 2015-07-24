@@ -30,7 +30,6 @@
   "dependencies": {
     "electron-spawn": "^3.0.0",
     "minimist": "^1.1.2",
-    "ms": "^0.7.1",
     "tempfile": "^1.1.1",
     "through2": "^2.0.0"
   },
