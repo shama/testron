@@ -77,5 +77,13 @@ tests.on('exit', function () {
 })
 ```
 
+## similar projects
+These are similar projects that also (can) use Electron for testing:
+
+* [hihat](https://github.com/Jam3/hihat)  
+  small tool for running browser tests locally
+* [zuul](https://github.com/defunctzombie/zuul)  
+  multi-framework javascript browser testing
+
 # license
 (c) 2015 Kyle Robinson Young. MIT License
