@@ -1,8 +1,12 @@
 if (process.versions['electron']) {
+  var ms = require('ms')
   module.exports = function (args) {
     var filename = args[1] || 'test.js'
     var old = process.stdout.write
     process.stdout.write = function (msg) {
+      if (msg.toString().slice(0, 7) === '# tests') {
+        perf(old.bind(process.stdout))
+      }
       if (msg.toString().slice(0, 4) === '# ok' || msg.toString().slice(0, 6) === '# fail') {
         process.nextTick(function () {
           require('remote').require('app').quit()
@@ -13,6 +17,19 @@ if (process.versions['electron']) {
     process.nextTick(function () {
       require(filename)
     })
+  }
+
+  function perf (log) {
+    var perf = performance.timing
+    var timing = {
+      network: ms(perf.connectEnd - perf.navigationStart),
+      server: ms(perf.responseEnd - perf.requestStart),
+      browser: ms(perf.loadEventEnd - perf.domLoading)
+    }
+    log('\n# performance\n')
+    log('#  network:\t' + timing.network + '\n')
+    log('#  server:\t' + timing.server + '\n')
+    log('#  browser:\t' + timing.browser + '\n\n')
   }
 } else {
   var fs = require('fs')
