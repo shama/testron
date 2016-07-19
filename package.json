@@ -28,13 +28,13 @@
   },
   "homepage": "https://github.com/shama/testron#readme",
   "dependencies": {
-    "electron-spawn": "^3.0.0",
+    "electron-spawn": "3.0.0",
     "minimist": "^1.1.2",
     "tempfile": "^1.1.1",
     "through2": "^2.0.0"
   },
   "devDependencies": {
-    "electron-prebuilt": "^0.30.0",
+    "electron-prebuilt": "0.30.0",
     "tape": "^4.0.1"
   }
 }
