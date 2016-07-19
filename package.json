@@ -34,7 +34,7 @@
     "through2": "^2.0.0"
   },
   "devDependencies": {
-    "electron-prebuilt": "^0.30.0",
+    "electron-prebuilt": "^0.37.8",
     "tape": "^4.0.1"
   }
 }
