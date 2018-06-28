@@ -41,7 +41,9 @@ if (process.versions['electron']) {
       electron.stdout.pipe(s.stdout)
       electron.stderr.pipe(s.stderr)
       electron.on('exit', function () {
-        fs.unlink(tmpname)
+        fs.unlink(tmpname, function (err) {
+          if (err) console.error(err)
+        })
       })
     })
     return s
