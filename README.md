@@ -86,4 +86,4 @@ These are similar projects that also (can) use Electron for testing:
   multi-framework javascript browser testing
 
 # license
-(c) 2015 Kyle Robinson Young. MIT License
+(c) 2018 Kyle Robinson Young. MIT License
